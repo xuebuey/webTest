@@ -2,7 +2,13 @@ Feature:Calc Fib
     In order to introduce Behave
     We calc fib as example
 
-  Scenario: Calc fib number
-     Given we have the number 10
+  Scenario Outline: Calc fib number
+     Given we have the number <number>
       when we calc the fib
-      then we get the fib number 55
+      then we get the fib number <fib_number>
+
+      Examples: Some Numbers
+        | number    | fib_number |
+        | 1         | 1          |
+        | 2         | 1          |
+        | 10        | 55         |
